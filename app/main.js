@@ -3,22 +3,35 @@ import ReactDOM from 'react-dom';
 // import App from './src/app';
 import 'amazeui-touch/dist/amazeui.touch.min.css';
 import {
-  Button,Card
+  Button,
+  Card,
+  Container,
+  Group,
 } from 'amazeui-touch';
-import {
-  GridExample
-} from './js/accordion.jsx';
+import TypographyExample from './js/typeTest.js';
+import TabsExample from './js/tabtest';
 
 // class Box
-let CommentList = React.createClass({
-  render: function() {
+// class MyTest extends React.Component {
+//   render() {
+//     return (
+//       <div>HELLO WORLD
+//         <Button>我是阿牛</Button>
+//         <TypographyExample />
+//       </div>
+//     )
+//   }
+// }
+
+let Photo = React.createClass({
+  render() {
     return (
-      <div className="commentList">
-        Hello, world! I am a CommentList.
-        <Card>aaaaaa</Card>
+      <div>
+        <h1>高度测试</h1>
+        <TabsExample />
       </div>
-    );
-  }
+    )
+  },
 });
 
-ReactDOM.render(<GridExample />, document.getElementById('root'));
+ReactDOM.render(<Photo />, document.getElementById('root'));
