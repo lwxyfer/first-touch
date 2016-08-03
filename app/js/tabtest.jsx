@@ -4,6 +4,7 @@ import {
   Tabs,
   Card,
   Button,
+  View
 } from 'amazeui-touch';
 
 const albums = [
@@ -56,7 +57,7 @@ const TabsExample = React.createClass({
 
   render() {
     return (
-      <Container {...this.props}>
+      <Container scrollable>
         <h3>Default</h3>
 
         <Tabs

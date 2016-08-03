@@ -11,7 +11,7 @@ module.exports = {
   devServer: {
     inline: true,
     contentBase: './app',
-    port: 8100,
+    port: 8200,
   },
   resolve: {
     extensions: ['', '.js', '.jsx'],
@@ -19,7 +19,7 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.js?$/,
+        test: /\.js[x]?$/,
         exclude: /node_modules/,
         loader: 'babel',
       },

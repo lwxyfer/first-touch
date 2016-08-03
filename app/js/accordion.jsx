@@ -3,7 +3,38 @@ import {
   Container,
   Accordion,
   Card,
+  View,
+  NavBar,
+  Badge,
+  List
 } from 'amazeui-touch';
+
+const clickHandler = (item, e) => {
+      e.preventDefault();
+      console.log(item);
+      if (item.title == 'Left') {
+        window.history.back();
+      }else{
+        window.history.pushState(null, item.href);
+      }
+    };
+
+const itemLeft = {
+  href: '#',
+  title: 'Left'
+};
+
+const itemRight = {
+  href: '#',
+  title: 'Right'
+};
+
+const dataAll = {
+  title: 'Navbar',
+  leftNav: [{...itemLeft, icon: 'left-nav'}],
+  rightNav: [{...itemRight, icon: 'right-nav'}],
+  onAction: clickHandler,
+};
 
 const albums = [
   {
@@ -27,12 +58,34 @@ const albums = [
     desc: `所有人都能从作品中听到能量和震撼的呈现，矛盾与妥协，失意与快乐，制作人林炜哲是真正进入到歌手的灵魂，找出最真实的瞬间再燃烧释放，献给大家；这种完全认真作音乐不哈啦的态度，不是只字片语能形容，也并非速食文化所能比拟，这种精神是和全世界的音乐人同步，这也是他们的作品和台湾大部份截然不同的原因。这样的音乐正是台湾年轻人目前需要的，与世界处在同步潮流，所有年轻人都能感受的热情和力量`
   }
 ];
+const img = <img width="32" src="http://lorempixel.com/128/128/people/" />;
+const badge1 = <Badge rounded amStyle="alert">5</Badge>;
 
 const AccordionExample = React.createClass({
   render() {
     return (
-      <Container {...this.props}>
-        <h3>Default</h3>
+      <View>
+        <NavBar {...dataAll} />
+        <Container scrollable>
+          <List>
+              <List.Item
+                media={img}
+                after={badge1}
+                title="List Item 1"
+              />
+              <List.Item
+                media={img}
+                after="2015.08"
+                title="List Item 2"
+                href="#"
+              />
+              <List.Item
+                media={img}
+                after={badge1}
+                title="List Item 3"
+                href="#"
+              />
+            </List>
         <Accordion defaultActiveKey={1}>
           {albums.map((ablum, i) => {
             return (
@@ -81,7 +134,8 @@ const AccordionExample = React.createClass({
             })}
           </Accordion>
         </Card>
-      </Container>
+        </Container>
+      </View>
     );
   }
 });
