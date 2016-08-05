@@ -3,7 +3,7 @@ var webpack = require('webpack');
 // var CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
 
 module.exports = {
-  entry: './app/main.js',
+  entry: './app/entry.js',
   output: {
     path: './app',
     filename: 'bundle.js',

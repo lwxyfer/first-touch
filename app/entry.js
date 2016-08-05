@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import routes from './routes';
+import routes from './route';
 
 import 'amazeui-touch/dist/amazeui.touch.min.css';
 
